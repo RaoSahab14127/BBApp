@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 function App() {
   return (
     <View style={styles.container}>
-      <Text>App</Text>
+      <Text>boilerplate</Text>
     </View>
   );
 }
