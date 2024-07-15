@@ -48,13 +48,17 @@ const App = () => (
                 justifyContent: 'center',
               }}>
               <Checkbox />
-              <Text>Remember me</Text>
+              <Text style={styles.textColor}>Remember me</Text>
             </View>
 
-            <Link to={''}>Forgot password?</Link>
+            <Link to={''} style={{color: '#Fd7'}}>
+              Forgot password?
+            </Link>
           </View>
           <PrimaryButton title="SIGN IN" />
-          <Text style={{marginBottom: -40}}>Sign in using</Text>
+          <Text style={{marginBottom: -40, color: '#fdf5e1'}}>
+            Sign in using
+          </Text>
         </View>
       </View>
     </ImageBackground>
@@ -96,6 +100,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontSize: 15,
+  },
+  textColor: {
+    color: '#fdf5e1',
   },
 });
 
