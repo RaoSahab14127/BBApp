@@ -17,7 +17,7 @@ const img = require('../assets/profile.png');
 const menu = require('../assets/menu.png');
 const logout = require('../assets/out.png');
 const cross = require('../assets/x-mark.png');
-
+const noti = require('../assets/subscribe.png');
 function CustomDrawerContent(props) {
   return (
     <View style={{flex: 1, justifyContent: 'space-between'}}>
@@ -69,6 +69,15 @@ function DrawerGroup() {
     <Drawer.Navigator
       drawerContent={props => <CustomDrawerContent {...props} />}
       screenOptions={({navigation}) => ({
+        headerRight: props => (
+          <TouchableOpacity
+            onPress={() => navigation.getParent().openDrawer('RightDrawer')}>
+            <Image
+              source={noti}
+              style={{height: 40, width: 40, marginLeft: 5}}
+            />
+          </TouchableOpacity>
+        ),
         headerLeft: props => (
           <TouchableOpacity onPress={navigation.toggleDrawer}>
             <Image
@@ -102,11 +111,47 @@ function DrawerGroup() {
     </Drawer.Navigator>
   );
 }
+// right
+function CustomDrawerContentR(props) {
+  return (
+    <View style={{flex: 1, justifyContent: 'space-between'}}>
+      <LinearGradient
+        colors={['orange', 'yellow']} // Same gradient for footer
+        style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingHorizontal: 40,
+          paddingVertical: 20,
+          backgroundColor: 'yellow',
+        }}>
+        <Text style={{color: 'white'}}>Complete your intake screen to</Text>
+        <Text style={{color: 'white'}}>personalize your plan!</Text>
+      </LinearGradient>
+    </View>
+  );
+}
+
+const RightDrawer = createDrawerNavigator();
+
+function RightDrawerScreen() {
+  return (
+    <RightDrawer.Navigator
+      screenOptions={{drawerPosition: 'right'}}
+      drawerContent={props => <CustomDrawerContentR {...props} />}>
+      <RightDrawer.Screen
+        options={{headerShown: false}}
+        name="RightDrawer"
+        component={DrawerGroup}
+        id="RightDrawer"
+      />
+    </RightDrawer.Navigator>
+  );
+}
 
 function Navigation() {
   return (
     <NavigationContainer>
-      <DrawerGroup />
+      <RightDrawerScreen />
     </NavigationContainer>
   );
 }
@@ -119,7 +164,7 @@ const styles = StyleSheet.create({
   avatarImage: {
     width: 100,
     height: 100,
-    borderRadius: 75, // half of width and height to make it circular
+    borderRadius: 75,
   },
 });
 
