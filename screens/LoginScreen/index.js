@@ -1,8 +1,8 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import APPConstants from './utils/APPConstants';
-import PrimaryButton from './components/button';
-import Primaryinput from './components/input';
+import APPConstants from '../../utils/APPConstants';
+import PrimaryButton from '../../components/button';
+import Primaryinput from '../../components/input';
 import {Link} from '@react-navigation/native';
 import {Checkbox} from 'react-native-paper';
 const LoginScreen = () => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import APPConstants from './utils/APPConstants';
-import PrimaryButton from './components/button';
+import APPConstants from '../../utils/APPConstants';
+import PrimaryButton from '../../components/button';
 
 const MainLoginScreen = () => (
   <View style={styles.container}>
