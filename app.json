@@ -1,4 +1,7 @@
 {
   "name": "BBApp",
-  "displayName": "BBApp"
+  "displayName": "BBApp",
+  "android":{
+    "softwareaKeyBoardLayoutMode":"Pan"
+  }
 }

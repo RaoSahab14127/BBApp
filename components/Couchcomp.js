@@ -4,17 +4,32 @@ import {View} from 'react-native';
 
 function Couchcomp(props) {
   return (
-    <View>
-      <View>
-        <Text>Exercise feedback</Text>
+    <View
+      style={{
+        padding: 20,
+        borderColor: '#DDD',
+        borderWidth: 1,
+        borderRadius: 10,
+        backgroundColor: 'white',
+      }}>
+      <View style={{paddingBottom: 10}}>
+        <Text style={{fontSize: 16, fontWeight: '500'}}>Exercise feedback</Text>
       </View>
-      <View>
-        <Text>
-          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-          lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem lorem
-        </Text>
+      <View
+        style={{
+          borderBottomColor: '#DDD',
+          borderBottomWidth: 1,
+          paddingBottom: 10,
+        }}>
+        <Text>loremlorem loremsdfasas lorem lorem lorem lorem DDD</Text>
       </View>
-      <View>
+      <View
+        style={{
+          flexDirection: 'row',
+          paddingTop: 10,
+          justifyContent: 'space-between',
+          marginTop: 10,
+        }}>
         <View>
           <Text>1 answers</Text>
         </View>
